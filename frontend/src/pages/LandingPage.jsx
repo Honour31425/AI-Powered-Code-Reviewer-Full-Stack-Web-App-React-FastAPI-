@@ -182,24 +182,22 @@ export default function LandingPage() {
                 whileTap={{ scale: 0.97 }}
                 className="flex items-center gap-2 px-8 py-4 rounded-xl font-medium text-text-secondary border border-white/10 hover:border-neon-blue/30 hover:text-neon-blue transition-all"
               >
-                <Star size={16} />
-                View on GitHub
+                <Zap size={16} />
+                See it in Action
               </motion.button>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-              className="mt-10 flex items-center gap-6 text-sm text-text-muted"
-            >
-              {['No signup required', 'Free to use', '10+ languages'].map((item, i) => (
-                <div key={i} className="flex items-center gap-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-neon-green" />
-                  {item}
-                </div>
-              ))}
-            </motion.div>
+          <motion.a
+  href="https://github.com/Honour31425/AI-Powered-Code-Reviewer-Full-Stack-Web-App-React-FastAPI-"
+  target="_blank"
+  rel="noopener noreferrer"
+  whileHover={{ scale: 1.04 }}
+  whileTap={{ scale: 0.97 }}
+  className="flex items-center gap-2 px-8 py-4 rounded-xl font-medium text-text-secondary border border-white/10 hover:border-neon-blue/30 hover:text-neon-blue transition-all"
+>
+  <Star size={16} />
+  View on GitHub
+</motion.a>
           </div>
 
           {/* Code Preview */}
