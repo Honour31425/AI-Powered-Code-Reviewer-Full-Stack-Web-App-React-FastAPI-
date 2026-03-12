@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0f;
+  color: #e2e8f0;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #252540;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4fc3f750;
+}
+
+.glass {
+  background: rgba(26, 26, 46, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(79, 195, 247, 0.1);
+}
+
+.glass-dark {
+  background: rgba(15, 15, 26, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.neon-text-blue {
+  color: #4fc3f7;
+  text-shadow: 0 0 20px rgba(79, 195, 247, 0.5);
+}
+
+.neon-text-purple {
+  color: #a855f7;
+  text-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #4fc3f7, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-grid {
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 .5H31.5V32' fill='none' stroke='%23ffffff06' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+.glow-border-blue {
+  border-color: rgba(79, 195, 247, 0.4);
+  box-shadow: 0 0 15px rgba(79, 195, 247, 0.15), inset 0 0 15px rgba(79, 195, 247, 0.05);
+}
+
+.glow-border-purple {
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.15), inset 0 0 15px rgba(168, 85, 247, 0.05);
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(79, 195, 247, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.monaco-editor, .monaco-editor-background {
+  background-color: #0f0f1a !important;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(1deg); }
+  66% { transform: translateY(-4px) rotate(-1deg); }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-delay { animation: float 6s ease-in-out infinite 2s; }
+.animate-float-delay2 { animation: float 6s ease-in-out infinite 4s; }
+
+/* Scanline effect */
+.scanline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(79, 195, 247, 0.3), transparent);
+  animation: scan 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
